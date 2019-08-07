@@ -1,0 +1,68 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - cloth_start:
+      use_entities: true
+  - inform_height_weight:
+      use_entities: true
+
+entities:
+- height
+- weight
+
+slots:
+  height:
+    auto_fill: true
+    initial_value: null
+    type: unfeaturized
+  weight:
+    auto_fill: true
+    initial_value: null
+    type: unfeaturized
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_ask_height_weight
+- utter_cloth_recommend
+- utter_slots_values
+- my_fallback_action
+config:
+  store_entities_as_slots: true
+
+templates:
+
+  utter_ask_height_weight:
+  - text: "有的亲，你身高体重是多少"
+
+  utter_cloth_recommend:
+  - text: "好的，身高{height}体重{weight}推荐M码的衣服"
+
+  utter_slots_values:
+  - text: "身高{height}体重{weight}"
+
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+forms:
+  - height_weight_form

@@ -1,0 +1,38 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+#language: en
+#pipeline: supervised_embeddings
+language: "zh"
+pipeline:
+- name: "JiebaTokenizer"
+- name: "CRFEntityExtractor"
+- name: "DucklingHTTPExtractor"
+  language: "zh$core"
+  url: "http://localhost:38000"
+  dimensions: [ "time", "number", "duration", "phone-number"]
+- name: "EntitySynonymMapper"
+- name: "CountVectorsFeaturizer"
+  OOV_token: oov
+  token_pattern: '(?u)\b\w+\b'
+- name: "EmbeddingIntentClassifier"
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+#policies:
+#  - name: MemoizationPolicy
+#  - name: KerasPolicy
+#  - name: MappingPolicy
+policies:
+  - name: FormPolicy
+  - name: MemoizationPolicy
+  - name: EmbeddingPolicy
+    epochs: 50
+    max_history: 5
+  - name: FallbackPolicy
+    # min confidence needed to accept an NLU prediction
+    nlu_threshold: 0.8
+    # min confidence needed to accept an action prediction from Rasa Core
+#    core_threshold: 0.8
+    # name of the action to be called if the confidence of intent / action
+    # is below the threshold
+    fallback_action_name: 'my_fallback_action'
