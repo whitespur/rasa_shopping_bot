@@ -1,68 +1,57 @@
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - cloth_start:
-      use_entities: true
-  - inform_height_weight:
-      use_entities: true
-
+- cloth_start
+- inform_height_weight
+- inform_size
+- inform_unknown_size
+- inform_ask_delivery
+- inform_choose_delivery
+- greet
+- goodbye
 entities:
 - height
 - weight
-
+- size
+- delivery
 slots:
+  delivery:
+    type: unfeaturized
   height:
-    auto_fill: true
-    initial_value: null
+    type: unfeaturized
+  size:
     type: unfeaturized
   weight:
-    auto_fill: true
-    initial_value: null
     type: unfeaturized
-
+templates:
+  utter_ask_size:
+  - text: 有货的亲,请问您要什么型号的？
+  - text: 有货的亲,请问您穿多大尺码的？
+  utter_inform_send_delivery:
+  - text: 好的，下单后今天下班前会给您发货的
+  utter_ask_height_weight:
+  - text: 好的,请问您身高体重是多少
+  - text: 好的,请问您身高体重多少呢？可以给您推荐合适的尺码
+  - text: 好的,请问您什么体型？
+  utter_cloth_recommend:
+  - text: 好的，身高{height}体重{weight}推荐M码的衣服
+  - text: 好的亲，身高{height}体重{weight}推荐M码的
+  utter_default_delivery:
+  - text: 好的，默认申通，你想换别的快递也可以改的
+  utter_modify_delivery:
+  - text: 好的，已经改成{delivery}快递了
+  utter_order_info:
+  - text: 您的订单信息如下:身高{height},体重{weight},尺码{size},快递{delivery},欢迎下次再来
+  utter_greet:
+  - text: 您好,有什么需要帮助的
+  utter_goodbye:
+  - text: 欢迎下次再来
+  - text: Bye
 actions:
-- utter_greet
-- utter_cheer_up
-- utter_did_that_help
-- utter_happy
-- utter_goodbye
+- utter_ask_size
+- utter_inform_send_delivery
 - utter_ask_height_weight
 - utter_cloth_recommend
-- utter_slots_values
-- my_fallback_action
-config:
-  store_entities_as_slots: true
-
-templates:
-
-  utter_ask_height_weight:
-  - text: "有的亲，你身高体重是多少"
-
-  utter_cloth_recommend:
-  - text: "好的，身高{height}体重{weight}推荐M码的衣服"
-
-  utter_slots_values:
-  - text: "身高{height}体重{weight}"
-
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-forms:
-  - height_weight_form
+- utter_default_delivery
+- utter_modify_delivery
+- utter_order_info
+- utter_goodbye
+- utter_greet

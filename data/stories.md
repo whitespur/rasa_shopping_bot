@@ -1,46 +1,42 @@
- ## only cloth
+ ## cloth know size
+ * greet
+     - utter_greet
  * cloth_start
+     - utter_ask_size
+ * inform_size
+     - utter_inform_send_delivery
+ * inform_ask_delivery
+     - utter_default_delivery
+ * inform_choose_delivery
+     - utter_modify_delivery
+ * goodbye
+     - utter_order_info
+
+ ## cloth unknown size
+ * greet
+     - utter_greet
+ * cloth_start
+     - utter_ask_size
+ * inform_unknown_size
      - utter_ask_height_weight
  * inform_height_weight
      - utter_cloth_recommend
+ * inform_ask_delivery
+     - utter_default_delivery
+ * inform_choose_delivery
+     - utter_modify_delivery
  * goodbye
-     - utter_goodbye
+     - utter_order_info
 
- ## form action
- * cloth_start
-     - utter_ask_height_weight
- * inform_height_weight
-     - height_weight_form
-     - form{"name": "height_weight_form"}
-     - form{"name": null}
-     - utter_slots_values
- * goodbye
-     - utter_goodbye
+<!--  form action临时先注释掉,后面配合自定义form action使用-->
+ <!-- ## form action -->
+ <!-- * cloth_start -->
+     <!-- - utter_ask_height_weight -->
+ <!-- * inform_height_weight -->
+     <!-- - height_weight_form -->
+     <!-- - form{"name": "height_weight_form"} -->
+     <!-- - form{"name": null} -->
+     <!-- - utter_order_info -->
+ <!-- * goodbye -->
+     <!-- - utter_order_info -->
 
-## happy path
-* greet
-  - utter_greet
-* mood_great
-  - utter_happy
-
-## sad path 1
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## sad path 2
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* deny
-  - utter_goodbye
-
-## say goodbye
-* goodbye
-  - utter_goodbye

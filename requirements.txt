@@ -2,4 +2,4 @@ rasa_sdk==1.1.0
 rasa==1.1.4
 requests==2.22.0
 typing==3.6.6
-#rasa-x==0.19.0  # pip install rasa-x --extra-index-url https://pypi.rasa.com/simple --default-timeout=100
+#rasa-x==0.20.0  # pip install rasa-x --extra-index-url https://pypi.rasa.com/simple --default-timeout=100
