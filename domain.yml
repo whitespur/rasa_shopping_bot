@@ -7,12 +7,35 @@ intents:
 - inform_choose_delivery
 - greet
 - goodbye
+- child_ask_child
+- child_inform_age
+- child_include_some
+- child_exclude_some
+- child_introduce
+- child_choose_taocan
+- child_ok
+- 'child_introduce:'
+- 'child_choose_taocan:'
+- 'child_include_some:'
+- 'child_ok:'
 entities:
 - height
 - weight
 - size
 - delivery
+- child_product
+- child_age
+- child_brand
+- child_exclude_brand
 slots:
+  child_age:
+    type: unfeaturized
+  child_brand:
+    type: unfeaturized
+  child_exclude_brand:
+    type: unfeaturized
+  child_product:
+    type: unfeaturized
   delivery:
     type: unfeaturized
   height:
@@ -45,6 +68,18 @@ templates:
   utter_goodbye:
   - text: 欢迎下次再来
   - text: Bye
+  utter_child_start_ask_age:
+  - text: 好的,您的孩子多大了
+  utter_child_ask_brand:
+  - text: 好的,您对品牌有要求吗
+  utter_child_ask_certain_brand:
+  - text: 日本花王可以吗
+  - text: 帮宝适可以吗
+  utter_child_introduce_product:
+  - text: 套餐一。XXL共五片，总价300。 套餐二，XXL供五片，总价350。 套餐三。小于85厘米的。共100片，总价300
+  utter_child_ask_other_question:
+  - text: 请问还有什么其他需要帮助您的吗?
+  - text: 请问还有其他问题吗?
 actions:
 - utter_ask_size
 - utter_inform_send_delivery
@@ -55,3 +90,8 @@ actions:
 - utter_order_info
 - utter_goodbye
 - utter_greet
+- utter_child_start_ask_age
+- utter_child_ask_brand
+- utter_child_ask_certain_brand
+- utter_child_introduce_product
+- utter_child_ask_other_question

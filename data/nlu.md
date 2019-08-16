@@ -67,10 +67,53 @@
 - hey there
 
 ## intent:goodbye
-- 好的
 - 再见
 - ok
 - bye
 - goodbye
 - see you around
 - see you later
+
+## intent:child_ask_child
+- 你好,我想了解一下[纸尿片](child_product)
+- 你好,我想了解一下[奶瓶](child_product)
+- 你好,我想了解一下[奶粉](child_product)
+- 你好,我想咨询一下[尿不湿](child_product)
+
+## intent:child_inform_age
+- [13个月](child_age)
+- [2岁](child_age)
+- [六个月](child_age)
+- [5个月](child_age)
+- [五个月](child_age)
+
+## intent: child_include_some:
+- 我要[花王](child_brand)
+- 我要[帮宝适](child_brand)
+- 我要[佳尔乐](child_brand)
+- [雀氏](child_brand)
+- [贝舒乐](child_brand)
+- [BQ贝奇](child_brand)
+- [贝奇](child_brand)
+- [贝奇](child_brand) 或 [花王](child_brand) 吧
+- [贝奇](child_brand) [帮宝适](child_brand) 吧
+
+## intent: child_exclude_some
+- [国内品牌](child_exclude_brand)不考虑
+- [国外品牌](child_exclude_brand)不考虑
+- 我不想要[国内](child_exclude_brand)的
+- 我不想要[三鹿](child_exclude_brand)的
+
+## intent:child_introduce:
+- 好的,介绍一下吧
+- 你说下吧
+- 可以的
+
+## intent:child_choose_taocan:
+- 套餐一吧
+- 套餐二吧
+- 套餐三吧
+
+## intent:child_ok:
+- 没了
+- 好了

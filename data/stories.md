@@ -40,3 +40,30 @@
  <!-- * goodbye -->
      <!-- - utter_order_info -->
 
+## child include story
+* child_ask_child
+ - utter_child_start_ask_age
+* child_inform_age
+ - utter_child_ask_brand
+* child_include_some
+ - utter_child_ask_certain_brand
+* child_introduce
+ - utter_child_introduce_product
+* child_choose_taocan
+ - utter_child_ask_other_question
+* child_ok
+ - utter_goodbye
+
+## child exclude story
+* child_ask_child
+ - utter_child_start_ask_age
+* child_inform_age
+ - utter_child_ask_brand
+* child_exclude_some
+ - utter_child_ask_certain_brand
+* child_introduce
+ - utter_child_introduce_product
+* child_choose_taocan
+ - utter_child_ask_other_question
+* child_ok
+ - utter_goodbye
