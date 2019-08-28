@@ -26,8 +26,8 @@ policies:
   - name: FormPolicy
   - name: MemoizationPolicy
   - name: EmbeddingPolicy
-    epochs: 50
-    max_history: 5
+    epochs: 30
+    max_history: 3
   - name: FallbackPolicy
     # min confidence needed to accept an NLU prediction
     nlu_threshold: 0.8

@@ -12,6 +12,11 @@ https://rasa.com/docs/rasa/
 
 >pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
 
+### for spaCy need below
+>python -m spacy download en_core_web_md
+
+>python -m spacy link en_core_web_md en
+
 ## 模型训练
 >rasa train
 
